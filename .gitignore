@@ -1,3 +1,5 @@
 # Node.js files
 node_modules/
 *.log
+# Local Netlify folder
+.netlify

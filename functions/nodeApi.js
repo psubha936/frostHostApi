@@ -1,6 +1,8 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+const serverless = require('serverless-http');
+const router = express.Router();
 
 const app = express();
 const port = 3000;
@@ -10,7 +12,7 @@ const issuer = 'J1jkJcZER9W0Y0BVY-Qgow';
 
 app.use(cors());
 
-app.get('/api/generateToken', (req, res) => {
+router.get('/generateToken', (req, res) => {
   const expiryTime = Math.floor(Date.now() / 1000) + 300; // current time + 5 minutes
 
   const payload = {
@@ -23,6 +25,8 @@ app.get('/api/generateToken', (req, res) => {
   res.json({ token });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+app.use('/.netlify/functions/nodeApi', router);
+
+module.exports.handler = serverless(app);
+
+// https://frostapi.netlify.app/.netlify/functions/nodeApi/generateToken this the link

@@ -1,7 +1,21 @@
 {
+  "name": "frost-api",
+  "scripts": {
+    "netlify-lambda": "netlify-lambda build functions"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0"
-  }
+    "jsonwebtoken": "^9.0.0",
+    "netlify": "^13.1.5",
+    "netlify-cli": "^14.3.1",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^3.2.0"
+  },
+  "version": "1.0.0",
+  "main": "./src/nodeApi.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
