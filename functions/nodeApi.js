@@ -29,4 +29,4 @@ app.use('/.netlify/functions/nodeApi', router);
 
 module.exports.handler = serverless(app);
 
-// https://frostapi.netlify.app/.netlify/functions/nodeApi/generateToken this the link
+// https://subhaprakashfrostapi.netlify.app/.netlify/functions/nodeApi/generateToken this the link
